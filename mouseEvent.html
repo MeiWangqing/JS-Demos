@@ -5,17 +5,17 @@ function mouseOver()
 {
 document.getElementById("p1").innerHTML = "点击头像跳转至浙江工商大学";
 var element = document.getElementById("image");
-    element.width = parseFloat(element.width) * 1.5;
-    element.height = parseFloat(element.height) * 1.5;
     console.log(element.width);
     console.log(element.height);
+    element.width = parseFloat(element.width) * 1.5;
+    //element.height = parseFloat(element.height) * 1.5;
 }
 function mouseOut()
 {
 document.getElementById("p1").innerHTML = "";
     var element = document.getElementById("image");
     element.width = parseFloat(element.width) / 1.5;
-    element.height = parseFloat(element.height) / 1.5;
+    //element.height = parseFloat(element.height) / 1.5;
 }
 </script>
 </head>
