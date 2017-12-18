@@ -4,10 +4,18 @@
 function mouseOver()
 {
 document.getElementById("p1").innerHTML = "点击头像跳转至浙江工商大学";
+var element = document.getElementById("image");
+    element.width = parseFloat(element.width) * 1.5;
+    element.height = parseFloat(element.height) * 1.5;
+    console.log(element.width);
+    console.log(element.height);
 }
 function mouseOut()
 {
 document.getElementById("p1").innerHTML = "";
+    var element = document.getElementById("image");
+    element.width = parseFloat(element.width) / 1.5;
+    element.height = parseFloat(element.height) / 1.5;
 }
 </script>
 </head>
@@ -16,7 +24,7 @@ document.getElementById("p1").innerHTML = "";
 <br>
 <p style="font-weight:bold">请将鼠标移到头像上</p>
 <br>
-<img style="cursor:pointer" src="imgs/eg_mouse.png" onmouseover="mouseOver()" onmouseout="mouseOut()" />
+<img id="image" style="cursor:pointer" src="imgs/eg_mouse.png" onclick="window.location.href='http://www.zjgsu.edu.cn/'" onmouseover="mouseOver()" onmouseout="mouseOut()" />
 <p style="cursor:pointer" id="p1"></p>
 </body>
 </html>
