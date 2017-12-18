@@ -1,26 +1,48 @@
 <html>
 <head>
-<script type="text/javascript">
-function startTime()
-{
-var today=new Date()
-var h=today.getHours()
-var m=today.getMinutes()
-var s=today.getSeconds()
+	<script type="text/javascript">
+        function startTime()
+        {
+            var today = new Date()
+            var h = today.getHours()
+            var m = today.getMinutes()
+            var s = today.getSeconds()
 // add a zero in front of numbers<10
-m=checkTime(m)
-s=checkTime(s)
-document.getElementById('txt').innerHTML=h+":"+m+":"+s
-t=setTimeout('startTime()',500)
-}
+            m = checkTime(m)
+            s = checkTime(s)
+            var suffix = getSuffix(h);
+            document.getElementById('txt').innerHTML = checkHour(h) + ":" + m + ":" + s + " " + suffix;
+            t = setTimeout('startTime()', 500)
+        }
+        function checkHour(hour)
+        {
+	        if(hour>12)
+            {
+                return hour - 12;
+            }else
+                return hour;
+        }
 
-function checkTime(i)
-{
-if (i<10) 
-  {i="0" + i}
-  return i
-}
-</script>
+        function getSuffix(hour)
+        {
+            if (hour >= 12)
+            {
+                return "pm";
+            } else
+            {
+                return "am";
+            }
+        }
+
+        function checkTime(i)
+        {
+            if (i < 10)
+            {
+                i = "0" + i
+            }
+            return i
+        }
+	</script>
 </head>
 
 <body onload="startTime()">
