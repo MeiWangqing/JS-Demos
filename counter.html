@@ -1,14 +1,15 @@
 <html>
 <head>
 <script type="text/javascript" src="counter.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=uft-8" />
 </head>
 
 <body>
 
 <form>
-<input type="button" value="开始计时！" onClick="timedCount()">
+<input type="button" id="controlButton" checkFlag="0" value="开始计时！" onClick="time(this)">
 <input type="text" id="txt">
-<input type="button" value="停止计时！" onClick="stopCount()">
+<!--<input type="button" value="停止计时！" onClick="stopCount()">-->
 </form>
 
 <p>请点击上面的“开始计时”按钮来启动计时器。输入框会一直进行计时，从 0 开始。点击“停止计时”按钮可以终止计时，并将计数重置为 0。</p>
